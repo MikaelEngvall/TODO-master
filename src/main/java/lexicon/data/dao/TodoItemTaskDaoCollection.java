@@ -12,7 +12,7 @@ import java.util.List;
 @Component
 public class TodoItemTaskDaoCollection implements TodoItemTaskDao {
 
-    private Collection<TodoItemTask> todoItemTasks;
+    private final Collection<TodoItemTask> todoItemTasks;
     private static TodoItemTaskDaoCollection instance;
 
     private TodoItemTaskDaoCollection() {

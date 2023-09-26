@@ -27,7 +27,6 @@ public class TodoItemTask {
     // Methods
 
     // Overridden methods from Object
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,7 +50,6 @@ public class TodoItemTask {
     }
 
     // Getters & Setters
-
     public int getId() {
         return id;
     }

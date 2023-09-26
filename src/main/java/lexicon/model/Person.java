@@ -9,37 +9,38 @@ import java.util.Objects;
 public class Person {
 
     // Fields
-    private final int id;
+    private int id;
     private String firstName;
     private String lastName;
-    private AppUser credentials;
+//    private AppUser credentials;
+//    private String email;
 
     // Constructor(s)
-
-
     public Person() {
         id = PersonIdSequencer.getInstance().nextId();
     }
 
-    public Person(String firstName, String lastName, String email) {
+    public Person(String firstName, String lastName){ //}, String email) {
         this();
         setFirstName(firstName);
         setLastName(lastName);
-        setEmail(email);
+//        setEmail(email);
     }
-
+    public Person(int personId, String firstName, String lastName) {
+        this.id = personId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
     // Methods
 
     // Overridden from Object
-
-
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                /* ", email='" + email + '\'' +*/
                 '}';
     }
 
@@ -48,19 +49,21 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName); // && Objects.equals(email, person.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, email);
+        return Objects.hash(id, firstName, lastName); //, email);
     }
 
     // Getters & Setters
     public int getId() {
         return id;
     }
-
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -77,15 +80,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        StringValidator.validateStringNotEmpty(email);
-        this.email = email;
-    }
-
-    private String email;
-
-
+//    public String getEmail() {
+//        return email;
+//    }
+//    public void setEmail(String email) {
+//        StringValidator.validateStringNotEmpty(email);
+//        this.email = email;
+//    }
 }

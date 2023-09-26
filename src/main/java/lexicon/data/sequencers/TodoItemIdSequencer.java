@@ -3,7 +3,7 @@ package lexicon.data.sequencers;
 public class TodoItemIdSequencer {
 
     //fields
-    private static TodoItemIdSequencer instance = new TodoItemIdSequencer();
+    private static final TodoItemIdSequencer instance = new TodoItemIdSequencer();
     private int currentId = 0;
 
     //constructor

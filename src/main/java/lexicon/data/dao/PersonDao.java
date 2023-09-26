@@ -1,17 +1,24 @@
 package lexicon.data.dao;
 
-        import lexicon.model.Person;
-        import org.springframework.stereotype.Component;
+import lexicon.model.Person;
+import org.springframework.stereotype.Component;
 
-        import java.util.Collection;
+import java.util.Collection;
+
 @Component
-public interface PersonDao extends BaseDao<Person>{
+public interface PersonDao extends BaseDao<Person> {
 
-//    Person persist(Person person);
-    Person findById(int id);
-    Person findByEmail(String email);
+    Person persist(Person person);
+
+    void findById(int id);
+
+    Collection<Person> findByName(String name);
+
     Collection<Person> findAll();
 
-    void remove(int id);
+    void create(Person person);
 
+    void delete(int id);
+
+    void update(Person person);
 }

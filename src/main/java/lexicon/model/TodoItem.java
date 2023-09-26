@@ -17,12 +17,9 @@ public class TodoItem {
     private Person creator;
 
     // Constructor(s)
-
-
     public TodoItem() {
         id = TodoItemIdSequencer.getInstance().nextId();
     }
-
         public TodoItem(String title, String taskDescription, LocalDate deadLine, boolean done, Person creator) {
         this();
         this.title = title;
@@ -38,7 +35,6 @@ public class TodoItem {
     }
 
     // Overridden methods from Object
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -64,7 +60,6 @@ public class TodoItem {
     }
 
     // Getters & Setters
-
     public int getId() {
         return id;
     }

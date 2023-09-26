@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class AppUserDaoCollection implements AppUserDao {
 
-    private Collection<AppUser> appUsers;
+    private final Collection<AppUser> appUsers;
 
     private static AppUserDaoCollection instance;
 

@@ -3,7 +3,7 @@ package lexicon.data.sequencers;
 public class PersonIdSequencer {
 
     //fields
-    private static PersonIdSequencer instance = new PersonIdSequencer();
+    private static final PersonIdSequencer instance = new PersonIdSequencer();
     private int currentId = 0;
 
     //constructor
